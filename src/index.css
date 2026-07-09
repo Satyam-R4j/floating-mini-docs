@@ -1,5 +1,52 @@
 @import "tailwindcss";
 
-::selection{
-    color: rgb(232, 142, 47);
+/* Selection Color Styling */
+::selection {
+  background-color: rgba(16, 185, 129, 0.2); /* Emerald green selection tint */
+  color: #10b981;
+}
+
+/* Custom Scrollbar for Card Descriptions & Modal List */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46; /* zinc-700 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b; /* zinc-600 */
+}
+
+/* Elegant scrollbar utility for descriptions inside cards */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Glassmorphism Panels */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.85); /* zinc-900 / 85 */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glowing card effect for hover states */
+.hover-glow:hover {
+  box-shadow: 0 0 20px 2px rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
 }
