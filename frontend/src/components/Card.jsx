@@ -19,7 +19,8 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
     e.stopPropagation();
     if (data.hasFile && data.filePath) {
       const link = document.createElement("a");
-      link.href = `http://localhost:5000/${data.filePath}`;
+      const fileUrl = data.filePath.startsWith("http") ? data.filePath : `/${data.filePath}`;
+      link.href = fileUrl;
       link.download = data.originalName || "download";
       document.body.appendChild(link);
       link.click();
