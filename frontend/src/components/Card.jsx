@@ -3,6 +3,7 @@ import { FaRegFileAlt } from "react-icons/fa";
 import { LuDownload, LuPencil, LuTrash2 } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { motion } from "motion/react";
+import { getFileUrl } from "../config";
 
 const Card = ({ data, reference, onDelete, onEdit }) => {
   // Extract file extension to render custom visual badge
@@ -19,7 +20,7 @@ const Card = ({ data, reference, onDelete, onEdit }) => {
     e.stopPropagation();
     if (data.hasFile && data.filePath) {
       const link = document.createElement("a");
-      const fileUrl = data.filePath.startsWith("http") ? data.filePath : `/${data.filePath}`;
+      const fileUrl = getFileUrl(data.filePath);
       link.href = fileUrl;
       link.download = data.originalName || "download";
       document.body.appendChild(link);

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
+import { getApiUrl } from "../config";
 
 const AuthContext = createContext(null);
 
@@ -27,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await fetch("/api/auth/me", {
+        const response = await fetch(getApiUrl("/api/auth/me"), {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -62,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   // Register user
   const register = async (username, email, password) => {
     try {
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch(getApiUrl("/api/auth/register"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +90,7 @@ export const AuthProvider = ({ children }) => {
   // Login user
   const login = async (emailOrUsername, password) => {
     try {
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch(getApiUrl("/api/auth/login"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +117,7 @@ export const AuthProvider = ({ children }) => {
   // Update Profile details
   const updateProfile = async (username, email) => {
     try {
-      const response = await fetch("/api/auth/profile", {
+      const response = await fetch(getApiUrl("/api/auth/profile"), {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -144,7 +145,7 @@ export const AuthProvider = ({ children }) => {
   // Update secure password
   const updatePassword = async (currentPassword, newPassword) => {
     try {
-      const response = await fetch("/api/auth/password", {
+      const response = await fetch(getApiUrl("/api/auth/password"), {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -186,7 +187,8 @@ export const AuthProvider = ({ children }) => {
       headers["Authorization"] = `Bearer ${token}`;
     }
 
-    const response = await fetch(url, {
+    const fullUrl = getApiUrl(url);
+    const response = await fetch(fullUrl, {
       ...options,
       headers,
     });
