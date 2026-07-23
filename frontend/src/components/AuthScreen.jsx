@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "motion/react";
 function AuthScreen() {
   const { login, register } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
-  const [username, setUsername] = useState("kai");
-  const [email, setEmail] = useState("kai");
-  const [password, setPassword] = useState("k41");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 

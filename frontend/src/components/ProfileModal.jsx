@@ -156,33 +156,36 @@ function ProfileModal({ isOpen, onClose, totalDocs, totalSize }) {
             <div className="flex border-b border-zinc-900 mb-6 flex-shrink-0 p-1 bg-zinc-900/30 rounded-2xl border border-zinc-800/40">
               <button
                 onClick={() => setActiveTab("overview")}
-                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 ${
+                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 flex items-center justify-center gap-1.5 ${
                   activeTab === "overview"
                     ? "bg-zinc-800 text-emerald-400 shadow-sm"
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
-                Overview Stats
+                <LuDatabase size="1.1em" />
+                <span>Overview Stats</span>
               </button>
               <button
                 onClick={() => setActiveTab("settings")}
-                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 ${
+                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 flex items-center justify-center gap-1.5 ${
                   activeTab === "settings"
                     ? "bg-zinc-800 text-emerald-400 shadow-sm"
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
-                Account Settings
+                <LuUser size="1.1em" />
+                <span>Account Settings</span>
               </button>
               <button
                 onClick={() => setActiveTab("security")}
-                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 ${
+                className={`flex-1 py-2 px-1.5 md:px-3 rounded-xl text-[10px] sm:text-xs font-bold transition-all duration-150 flex items-center justify-center gap-1.5 ${
                   activeTab === "security"
                     ? "bg-zinc-800 text-emerald-400 shadow-sm"
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
-                Workspace Security
+                <LuShieldCheck size="1.1em" />
+                <span>Workspace Security</span>
               </button>
             </div>
 

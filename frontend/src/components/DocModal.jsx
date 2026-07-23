@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { IoClose } from "react-icons/io5";
 import { FaRegFileAlt } from "react-icons/fa";
+import { LuDownload } from "react-icons/lu";
 
 const PRESETS = {
   colors: [
@@ -291,24 +292,26 @@ const DocModal = ({ isOpen, onClose, onSave, editData }) => {
                     <button
                       type="button"
                       onClick={() => setClose(false)}
-                      className={`py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-150 ${
+                      className={`py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 ${
                         !close
                           ? "bg-zinc-800 text-emerald-400 shadow-sm"
                           : "text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
-                      Download Icon
+                      <LuDownload size="1.05em" />
+                      <span>Download Icon</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setClose(true)}
-                      className={`py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-150 ${
+                      className={`py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-150 flex items-center justify-center gap-1.5 ${
                         close
                           ? "bg-zinc-800 text-rose-400 shadow-sm"
                           : "text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
-                      Close Icon
+                      <IoClose size="1.1em" />
+                      <span>Close Icon</span>
                     </button>
                   </div>
                 </div>
