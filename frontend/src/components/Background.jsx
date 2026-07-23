@@ -4,8 +4,11 @@ function Background() {
   return (
     <>
       <div className="fixed z-[2] w-full h-screen select-none pointer-events-none">
-        <div className="absolute top-[5%] w-full py-6 flex flex-col items-center justify-center text-zinc-600 font-semibold gap-1 px-4">
-          <span className="text-xl tracking-wider">Doddle Docs.</span>
+        <div className="absolute top-[5%] w-full py-6 flex flex-col items-center justify-center text-zinc-600 font-semibold gap-1.5 px-4">
+          <div className="flex items-center gap-2.5 opacity-70">
+            <img src="/logo.png" alt="Doddle Docs Logo" className="w-6 h-6 object-contain" />
+            <span className="text-xl tracking-wider">Doddle Docs.</span>
+          </div>
           <span className="text-xs text-zinc-600 font-medium tracking-wide bg-zinc-900/10 border border-zinc-800/5 px-4 py-1.5 rounded-full text-center max-w-[90%] md:max-w-none">
             <span className="hidden md:inline">Drag to arrange workspace • Hover card controls to edit or delete</span>
             <span className="inline md:hidden">Tap card controls to edit or delete</span>

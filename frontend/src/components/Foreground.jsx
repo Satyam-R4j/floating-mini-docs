@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { LuPlus, LuSearch, LuUser, LuLogOut } from "react-icons/lu";
+import { LuPlus, LuSearch, LuUser, LuLogOut, LuHouse } from "react-icons/lu";
 import Card from "./Card";
 import DocModal from "./DocModal";
 import { useAuth } from "../context/AuthContext";
@@ -17,7 +17,7 @@ const safeJson = async (response) => {
   }
 };
 
-function Foreground() {
+function Foreground({ onNavigateHome }) {
   const ref = useRef(null);
   const { user, loading, authFetch, logout } = useAuth();
   const [docs, setDocs] = useState([]);
@@ -179,6 +179,25 @@ function Foreground() {
         
         {/* Statistics Badges & User Session details */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 md:gap-3">
+          <img 
+            src="/logo.png" 
+            alt="Doddle Docs Logo" 
+            onClick={onNavigateHome}
+            className="h-10 sm:h-12 w-auto object-contain drop-shadow-md cursor-pointer hover:scale-105 transition-transform" 
+            title="Back to Product Home Page"
+          />
+
+          <button
+            onClick={onNavigateHome}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-semibold text-zinc-400 hover:text-emerald-400 cursor-pointer transition-all active:scale-95"
+            title="Product Features & Overview"
+          >
+            <LuHouse size="1.1em" />
+            <span className="hidden md:inline">Product Info</span>
+          </button>
+
+          <div className="h-4 w-px bg-zinc-800 hidden sm:block" />
+
           <div 
             onClick={() => setIsProfileOpen(true)}
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-semibold cursor-pointer transition-all duration-150 active:scale-[0.97]"

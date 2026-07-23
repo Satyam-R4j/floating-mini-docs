@@ -66,9 +66,7 @@ function AuthScreen() {
       >
         {/* Title Watermark Logo */}
         <div className="flex flex-col items-center justify-center text-center mb-6 md:mb-8 select-none">
-          <div className="h-14 w-14 rounded-3xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-950/30 mb-4">
-            <span className="text-2xl font-black tracking-tighter text-zinc-950 font-['Poppins']">D</span>
-          </div>
+          <img src="/logo.png" alt="Doddle Docs Logo" className="h-20 w-auto object-contain mb-4 drop-shadow-xl" />
           <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
             {isLogin ? "Welcome Back" : "Create Account"}
           </h2>
